@@ -1,0 +1,17 @@
+<section class ="body">
+    <div class ="izq">
+        <div class=" img"><img src="{{miUser.photo}}" alt=""></div>
+        <h1>{{miUser.name}}</h1>
+        <p>Name <input type="text" placeholder="Name" value = "{{miUser.name}}"></p>
+        <p>Surname  <input type="text" placeholder="Surname" value="{{miUser.last_name}}"></p>
+        <p>E-mail  <input type="text" placeholder="E-mail" value ="{{miUser.email}}"></p>
+    </div>
+    <div class ="dere">
+        <h1>Edit info</h1>
+        <input type="text" placeholder="Name" #inputName>
+        <input type="text" placeholder="Surname"#inputSurname>
+        <input type="text" placeholder="E-mail"#inputEmail >
+        <input type="text" placeholder="URL" #inputURL>
+        <button (click)="cambiar(inputName, inputSurname , inputEmail, inputURL)">Edit</button>
+    </div>
+</section>
