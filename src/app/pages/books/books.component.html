@@ -1,0 +1,42 @@
+<section class = "holder">
+    <div class="body">
+    <ng-container *ngFor="let book of booksCollection ; let even = even" >
+
+        <div class="card">
+            <img src="{{book.photo}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class ="Tapa">Tapa blanda</p>
+                <div >
+                    <ul>
+                        <li><h1>{{book.title}}</h1></li>
+                        <li>{{book.author}}</li>
+                        <li>{{book.id_book | ref}}</li>
+                        <li></li>
+                    </ul>
+
+                </div>
+                <div><h3>{{book.price}}€</h3></div>
+              <button class="boton" style="width: 200px;" [ngClass]="{'par-boton': even, 'impar-boton' : !even}" >Comprar</button>
+            </div>
+          </div>
+    </ng-container>
+</div>
+    <div *ngIf="booksCollection.length === 0" >No hay libros</div>
+    <section class ="formulario_holder">
+        <div class="formularios">
+            <input type="Correo" placeholder="id-book" #inputIDBook>
+            <input type="pregunta" placeholder="id-user" #inputIDUser>
+            <input type="Nombre" placeholder="Titulo" #inputTitulo>
+            <input type="pregunta" placeholder="Genero" #inputGenero>
+            <input type="Apellido" placeholder="Autor" #inputAutor>
+            <input type="Precio" placeholder="precio" #inputPrecio>       
+            <input type="URL" placeholder="URL" #inputPhoto>       
+            
+            <button class="boton1" type="button" style="width: 100px;" (click)="agregarLibro(inputIDBook, inputIDUser, inputTitulo, inputGenero, inputAutor,inputPrecio,inputPhoto)">Submit</button>
+        </div>
+    </section>
+
+    
+
+
+</section>

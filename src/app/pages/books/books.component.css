@@ -1,0 +1,92 @@
+.holder{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(/assets/img/575203498_178712747_1706x960.webp);
+}
+.body{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+}
+.tapa{
+    border-bottom: 5px solid black;
+    
+}
+.par-boton{
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    background-color:rgb(1, 181, 118);
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.impar-boton{
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    background-color:rgb(4, 1, 181);
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.card-img-top{
+    width: 50%;
+    height: 50%;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+    font-size: large;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario_holder{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.formularios{
+    width: 100%;
+    height: 400px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.formularios input{
+    padding: 10px 30px;
+    background:  rgba(255, 255, 255, 0.6);
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+
+}
+.formularios button{
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    background-color:rgb(1, 181, 118);
+}

@@ -8,7 +8,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormRegisterComponent } from './component/form-register/form-register.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ProfileComponent } from './component/profile/profile.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { BooksComponent } from './pages/books/books.component';
+import { RefPipe } from './pipes/ref.pipe';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { ProfileComponent } from './component/profile/profile.component';
     FormRegisterComponent,
     RegisterComponent,
     ProfileComponent,
+    BooksComponent,
+    RefPipe,
    
   ],
   imports: [
