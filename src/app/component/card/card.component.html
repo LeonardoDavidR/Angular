@@ -1,0 +1,25 @@
+<section class="holder">
+    <div class="body">
+        <div class="card">
+            <button class = "cierre" (click)="eliminar()">cerrar</button>
+            <img src="{{booksFather.photo}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="Tapa">Tapa blanda</p>
+                <div>
+                    
+                    <ul>
+                        <li>
+                            <h1>{{booksFather.title}}</h1>
+                        </li>
+                        <li>{{booksFather.author}}</li>
+                        <li>{{booksFather.id_book | ref}}</li>
+                        <li></li>
+                    </ul>
+
+                </div>
+                <div>
+                    <h3>{{booksFather.price}}€</h3>
+                </div>
+                <button class="boton" style="width: 200px;" [ngClass]="{'par-boton': true}">Comprar</button>
+            </div>
+        </div>

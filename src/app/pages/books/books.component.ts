@@ -42,6 +42,26 @@ export class BooksComponent {
     }
     this.booksCollection.push(books)
     
+    // let newB :Books = new Books()
   }
+  eliminarLibroFather(noBook : Books):void{
+    // for(let i = 0 ; i < this.booksCollection.length;i ++){
+    //    if(this.booksCollection[i].id_book != 0){
+    //   delete this.booksCollection[i]
+    // }
+    // }
+    this.booksCollection.filter(function (book){
+      //  noBook.id_book == book.id_book
+      book.id_book != noBook.id_book
+      
+       
+    })
+    // let indice = this.booksCollection.lastIndexOf(booksFather);
+    // this.booksCollection.splice(indice,1)
+
+    
+   
+  }
+  
 
 }
