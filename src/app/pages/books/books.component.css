@@ -1,5 +1,5 @@
 .holder{
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,7 +41,7 @@
     padding: 10px 20px;
     border: none;
     text-transform: uppercase;
-    background-color:rgb(4, 1, 181);
+    background-color:rgb(114, 112, 238);
     border-radius: 4px;
     font-weight: bold;
 }
