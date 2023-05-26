@@ -20,6 +20,6 @@
                 <div>
                     <h3>{{booksFather.price}}€</h3>
                 </div>
-                <button class="boton" style="width: 200px;" [ngClass]="{'par-boton': true}">Comprar</button>
+                <button class="boton" style="width: 200px;" [ngClass]="esPar=== true ? 'par-boton' : 'impar-boton' ">Comprar</button>
             </div>
         </div>

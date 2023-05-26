@@ -9,6 +9,7 @@ import { Books } from 'src/app/models/books';
 export class CardComponent {
   @Input() booksFather: Books;
   @Output() eliminarLibro = new EventEmitter<Books>();
+  @Input() esPar : boolean
   constructor(){};
 
   
@@ -22,7 +23,7 @@ export class CardComponent {
     // }
   }
   
-  ngOninit():void {
+  ngOnInit():void {
 
   }
 }
