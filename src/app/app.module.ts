@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {ToastrModule} from 'ngx-toastr'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +17,10 @@ import { RefPipe } from './pipes/ref.pipe';
 import { CardComponent } from './component/card/card.component';
 import { BooksformComponent } from './pages/booksform/booksform.component';
 import { BooksmodifComponent } from './pages/booksmodif/booksmodif.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { FormLoginComponent } from './component/form-login/form-login.component';
+
 
 
 @NgModule({
@@ -30,11 +37,19 @@ import { BooksmodifComponent } from './pages/booksmodif/booksmodif.component';
     CardComponent,
     BooksformComponent,
     BooksmodifComponent,
+    LoginComponent,
+    FormLoginComponent,
+    
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+<section class="holder">
+    <form class="form" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+       <h1> <p style="color: white; border-bottom: 2px solid rgb(163, 162, 162);">Log-in</p></h1>
+        <div class="form-group">
+            <input type="email" placeholder="email" name="email" class="form-control" [(ngModel)]="user.email"
+                #inputEmail="ngModel"
+                [ngClass]="{'is-invalid': (inputEmail.dirty || inputEmail.touched) && inputEmail.invalid}" required>
+            <div *ngIf="(inputEmail.dirty || inputEmail.touched) && inputEmail.invalid" class="invalid-feedback">
+                <p *ngIf="inputEmail.errors.required">El correo es obligatorio</p>
+            </div>
+
+        </div>
+
+        <div>
+            <input type="password" placeholder="password" name="password" class="form-control"
+                [(ngModel)]="user.password" #inputPassword="ngModel"
+                [ngClass]="{'is-invalid': (inputPassword.dirty || inputPassword.touched) && inputPassword.invalid}"
+                required>
+            <div *ngIf="(inputPassword.dirty || inputPassword.touched) && inputPassword.invalid"
+                class="invalid-feedback">
+                <p *ngIf="inputPassword.errors.required" style="color:  danger">La contraseña es obligatorio</p>
+                <div *ngIf="inputPassword.errors.minlength">Tiene que tener minimo 8 caracteres</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+    </form>
+</section>

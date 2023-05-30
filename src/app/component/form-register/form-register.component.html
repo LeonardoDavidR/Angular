@@ -1,15 +1,52 @@
-<section class ="register">
-    <div class ="margin"></div>
-    <div class="formularios">
-        <h1 > Registrate</h1>
-        <input type="name" placeholder="name" id="nameID">
-        <input type="surname" placeholder="surname" id="surnameID">
-        <input type="e-mail" placeholder="e-mail" id="e-mailID">
-        <input type="url" placeholder="url" id="urlID" >
-        <input type="password" placeholder="password" id="passwordID">
-        <input type="repeatPassword" placeholder="Repeat Password" id="repeatID">
- 
-        <button class="boton" style="width: 100px;" onclick="peliculaInput()" >Submit</button>
+<section class="holder">
+  <form class="form" [formGroup]="myForm">
+    <p>Registrate</p>
+    <div class="form-group">
+      <input type="nombre" placeholder="nombre" class="form-control" formControlName="nombre"
+      [ngClass]="{'is-invalid': (myForm.get('nombre').dirty || myForm.get('nombre').touched) && !myForm.get('nombre').valid}">
+      <div *ngIf="!myForm.get('nombre').valid" class ="invalid-feedback">
+        El nombre es necesario
+      </div>
+
     </div>
-    <div class ="margin"></div>
+    <div class="form-group">
+      <input type="apellido" placeholder="apellido" class="form-control" formControlName="apellido"
+      [ngClass]="{'is-invalid': (myForm.get('apellido').dirty || myForm.get('apellido').touched) && !myForm.get('apellido').valid}">
+      <div *ngIf="!myForm.get('apellido').valid" class ="invalid-feedback">
+        Los apellidos son necesarios
+      </div>
+
+    </div>
+    <div class="form-group">
+      <input type="url" placeholder="url" class="form-control" formControlName="url">
+
+    </div>
+    <div class="form-group">
+      <input type="email" placeholder="email" class="form-control" formControlName="email"
+      [ngClass]="{'is-invalid': (myForm.get('email').dirty || myForm.get('email').touched) && !myForm.get('email').valid}">
+      <div *ngIf="!myForm.get('email').valid" class ="invalid-feedback">
+        <div *ngIf="myForm.get('email').errors.required">La direccion de email es obligatoria</div>
+        <div *ngIf="myForm.get('email').errors.email">Direccion de email incorrecta</div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="password" class="form-control" formControlName="password"
+      [ngClass]="{'is-invalid': (myForm.get('password').dirty || myForm.get('password').touched) && !myForm.get('password').valid}">
+      <div *ngIf="!myForm.get('password').valid" class="invalid-feedback">
+        <div *ngIf="myForm.get('password').errors.required">La contraseña es obligatoria</div>
+        <div *ngIf="myForm.get('password').errors.minlength">La clave debe tener minimo 8 caracteres</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="repeat-password" class="form-control" formControlName="password2"
+      [ngClass]="{'is-invalid': (myForm.get('password2').dirty || myForm.get('password2').touched) && !myForm.get('password2').valid}">
+      <div *ngIf="!myForm.get('password2').valid" class="invalid-feedback">
+        <div *ngIf="myForm.get('password2').errors.required">La contraseña es obligatoria</div>
+        <div *ngIf="!myForm.get('password2').errors.required &&
+                    myForm.get('password2').errors.matchPassword">Las claves no coinciden</div>
+    </div>
+  </div>
+    <button type="button" class="btn btn-primary" (click)="register()" [disabled]="myForm.invalid">Submit</button>
+  </form>
 </section>

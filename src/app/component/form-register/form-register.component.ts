@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { FormGroup , FormBuilder , Validators} from '@angular/forms'
+import {AbstractControl}from '@angular/forms'
 @Component({
   selector: 'app-form-register',
   templateUrl: './form-register.component.html',
@@ -7,4 +8,37 @@ import { Component } from '@angular/core';
 })
 export class FormRegisterComponent {
 
+  public myForm : FormGroup;
+  
+  constructor(private formBuilder : FormBuilder){
+    this.buildForm();
+  }
+  public register(){
+    let user = this.myForm.value;
+    console.log(user);
+  }
+
+
+
+  private buildForm(){
+    let minPassLength = 8;
+
+    this.myForm = this.formBuilder.group({
+      nombre : [, Validators.required],
+      apellido : [, Validators.required],
+      url : [, ],
+      email : [,[Validators.required, Validators.email]],
+      password : [, [Validators.required, Validators.minLength(minPassLength)]],
+      password2 : [,[Validators.required, this.checkPasswords]]
+    })
+
+  }
+  private checkPasswords(control : AbstractControl){
+    let resultado = {matchPassword : true};
+    if(control.parent?.value.password == control.value)
+      resultado = null;
+      return resultado;
+    
+  }
+  
 }

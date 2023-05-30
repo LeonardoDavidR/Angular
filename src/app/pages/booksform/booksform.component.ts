@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { BooksService } from 'src/app/shared/books.service';
 import { Router } from '@angular/router';
 import { Books } from 'src/app/models/books';
+import { ToastrService } from 'ngx-toastr';
+
+
+
 @Component({
   selector: 'app-booksform',
   templateUrl: './booksform.component.html',
@@ -9,7 +13,9 @@ import { Books } from 'src/app/models/books';
 })
 export class BooksformComponent {
   constructor(public bookService : BooksService,
-              public route : Router){}
+              public route : Router,
+              public toastr : ToastrService
+              ){}
   
   
   public agregarLibro(newID: HTMLInputElement, newIdUser: HTMLInputElement, newTitle: HTMLInputElement, newType: HTMLInputElement,newAuthor: HTMLInputElement,
@@ -33,10 +39,10 @@ export class BooksformComponent {
       price: parseInt(price1.value),
       photo: photo1.value
     }
-    alert("El libro se ha añadido correctamente")
+   
     this.bookService.add(books)
     this.route.navigateByUrl('/books')
-    alert("se ha añadido correctamente")
+    this.toastr.success("Se ha añadido correctamente")
     // let newB :Books = new Books()
   }
 }

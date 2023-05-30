@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { BooksService } from 'src/app/shared/books.service';
 import { Books } from 'src/app/models/books';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
+
 @Component({
   selector: 'app-booksmodif',
   templateUrl: './booksmodif.component.html',
@@ -10,7 +13,9 @@ import { Router } from '@angular/router';
 export class BooksmodifComponent {
 
   constructor(public bookService : BooksService,
-              public route : Router){
+              public route : Router,
+             private toastr : ToastrService
+              ){
 
   }
 
@@ -38,10 +43,11 @@ export class BooksmodifComponent {
     this.route.navigateByUrl('/books')
     
     if(this.bookService.edit(books)){
-      alert("El libro se ha modificado correctamente")
+    this.toastr.success("Se ha modificado correctamente")
     }
     else{
-      alert("no se puede editar")
+      this.toastr.error("No se ha modificado")
+
     }
   }
 }

@@ -6,6 +6,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
 import { BooksformComponent } from './pages/booksform/booksform.component';
 import { BooksmodifComponent } from './pages/booksmodif/booksmodif.component';
+import { LoginComponent } from './pages/login/login.component';
 const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path : "form-register", component: RegisterComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: "books" , component: BooksComponent},
   {path: "addBook",  component : BooksformComponent},
   {path : "modifBook" , component : BooksmodifComponent},
+  {path : "login" , component : LoginComponent},
   {path: "**" , component: HomeComponent}
 
 ];

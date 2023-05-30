@@ -26,3 +26,6 @@ html{
     text-decoration: none;
     color: white;
 }
+.active {
+    background-color: rgb(222, 100, 100);
+}
