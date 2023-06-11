@@ -3,7 +3,7 @@ import { BooksService } from 'src/app/shared/books.service';
 import { Books } from 'src/app/models/books';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
+import { Respuesta } from 'src/app/models/respuesta';
 
 @Component({
   selector: 'app-booksmodif',
@@ -39,15 +39,18 @@ export class BooksmodifComponent {
         price: parseInt(price1.value),
         photo: photo1.value
       }
-    this.bookService.edit(books)
-    this.route.navigateByUrl('/books')
-    
-    if(this.bookService.edit(books)){
+    this.bookService.edit(books).subscribe((respuesta : Respuesta)=>{
+
+          
+    if(respuesta.data){
     this.toastr.success("Se ha modificado correctamente")
     }
     else{
       this.toastr.error("No se ha modificado")
 
     }
+    })
+    this.route.navigateByUrl('/books')
+
   }
 }
